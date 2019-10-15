@@ -1795,7 +1795,7 @@ function (_Component) {
       if (this.component.clearOnHide !== false && !this.options.readOnly) {
         if (!show) {
           this.deleteValue();
-        } else if (!this.hasValue()) {
+        } else if (!this.hasValue() || ((this.data[this.key] == "" || this.data[this.key] == null) && this.defaultValue != null && this.defaultValue != "")) {
           // If shown, ensure the default is set.
           this.setValue(this.defaultValue, {
             noUpdateEvent: true
